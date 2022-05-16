@@ -13,7 +13,9 @@ export function answerIsYesOrNo(count = 2) {
   console.log(`Question: ${numberRand}`);
   const answer = readlineSync.question('Your answer: ');
   if ((numberRand % 2 === 0 && answer !== 'yes') || (numberRand % 2 !== 0 && answer !== 'no')) {
-    return `yes" is wrong answer ;(. Correct answer was "no". Let's try again, ${nameUser}!`;
+    console.log('"yes" is wrong answer ;(. Correct answer was "no".');
+    return `Let's try again, ${nameUser}!`;
   }
+  console.log('Correct!');
   return count === 0 ? `Congratulations, ${nameUser}! ` : answerIsYesOrNo(count - 1);
 }
