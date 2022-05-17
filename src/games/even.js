@@ -1,13 +1,18 @@
-import readlineSync from 'readline-sync';
-import { questionAboutTheNameUser, numberRandom } from '../index.js';
+import {
+  answerUser,
+  questionAboutTheNameUser,
+  questionAsced,
+  variantExpression,
+} from '../index.js';
 
 const nameUser = questionAboutTheNameUser();
 
+console.log(questionAsced(0));
+
 const answerYesOrNo = (count = 2) => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  const numberRand = numberRandom(1, 100);
+  const numberRand = variantExpression(0);
   console.log(`Question: ${numberRand}`);
-  const answer = readlineSync.question('Your answer: ');
+  const answer = answerUser();
   if ((numberRand % 2 === 0 && answer !== 'yes') || (numberRand % 2 !== 0 && answer !== 'no')) {
     console.log('"yes" is wrong answer ;(. Correct answer was "no".');
     return `Let's try again, ${nameUser}!`;

@@ -1,16 +1,19 @@
-import readlineSync from 'readline-sync';
-import { questionAboutTheNameUser, numberRandom } from '../index.js';
+import {
+  questionAboutTheNameUser,
+  questionAsced,
+  variantExpression,
+  answerUser,
+} from '../index.js';
 
 const nameUser = questionAboutTheNameUser();
+console.log(questionAsced(1));
 
 const calculateMathTheOperation = (count = 2) => {
-  console.log('What is the result of the expression?');
-  const firstNumberExpression = numberRandom(0, 20);
-  const secondNumberExpression = numberRandom(0, 20);
-  const operation = ['+', '-', '*'];
-  const operationRandom = operation[numberRandom(0, operation.length)];
-  console.log(`Question: ${firstNumberExpression} ${operationRandom} ${secondNumberExpression}`);
   let resultOperation;
+  const firstNumberExpression = variantExpression(0);
+  const secondNumberExpression = variantExpression(0);
+  const operationRandom = variantExpression(1);
+  console.log(`Question: ${firstNumberExpression} ${operationRandom} ${secondNumberExpression}`);
   if (operationRandom === '+') {
     resultOperation = firstNumberExpression + secondNumberExpression;
   }
@@ -20,7 +23,7 @@ const calculateMathTheOperation = (count = 2) => {
   if (operationRandom === '*') {
     resultOperation = firstNumberExpression * secondNumberExpression;
   }
-  const answer = readlineSync.question('Your answer: ');
+  const answer = answerUser();
   if (Number(answer) !== resultOperation) {
     console.log(`"${answer}" is wrong answer ;(. Correct answer was "${resultOperation}".`);
     return `Let's try again, ${nameUser}!`;
