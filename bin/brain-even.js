@@ -1,8 +1,4 @@
 #!/usr/bin/env node
-import { questionAboutTheNameUser, answerIsYesOrNo } from '../src/even.js';
+import { answerYesOrNo } from '../src/games/even.js';
 
-console.log('Welcome to the Brain Games!');
-console.log(questionAboutTheNameUser());
-
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
-console.log(answerIsYesOrNo());
+console.log(answerYesOrNo());

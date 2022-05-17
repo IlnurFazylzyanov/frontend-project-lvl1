@@ -1,14 +1,10 @@
 import readlineSync from 'readline-sync';
+import { questionAboutTheNameUser, numberRandom } from '../index.js'
 
-let nameUser = '';
-export const questionAboutTheNameUser = () => {
-  nameUser = readlineSync.question('May I have your name? ');
-  return `Hello ${nameUser}!`;
-};
+const nameUser = questionAboutTheNameUser();
 
-const numberRandom = (min, max) => Math.round(Math.random() * (max - min) + min);
-
-export function answerIsYesOrNo(count = 2) {
+export function answerYesOrNo(count = 2) {
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
   const numberRand = numberRandom(1, 100);
   console.log(`Question: ${numberRand}`);
   const answer = readlineSync.question('Your answer: ');
@@ -17,5 +13,5 @@ export function answerIsYesOrNo(count = 2) {
     return `Let's try again, ${nameUser}!`;
   }
   console.log('Correct!');
-  return count === 0 ? `Congratulations, ${nameUser}! ` : answerIsYesOrNo(count - 1);
+  return count === 0 ? `Congratulations, ${nameUser}! ` : answerYesOrNo(count - 1);
 }
