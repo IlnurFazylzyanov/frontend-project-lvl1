@@ -1,9 +1,9 @@
 import readlineSync from 'readline-sync';
-import { questionAboutTheNameUser, numberRandom } from '../index.js'
+import { questionAboutTheNameUser, numberRandom } from '../index.js';
 
 const nameUser = questionAboutTheNameUser();
 
-export function answerYesOrNo(count = 2) {
+const answerYesOrNo = (count = 2) => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   const numberRand = numberRandom(1, 100);
   console.log(`Question: ${numberRand}`);
@@ -14,4 +14,6 @@ export function answerYesOrNo(count = 2) {
   }
   console.log('Correct!');
   return count === 0 ? `Congratulations, ${nameUser}! ` : answerYesOrNo(count - 1);
-}
+};
+
+export default answerYesOrNo;
