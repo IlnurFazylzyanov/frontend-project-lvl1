@@ -14,6 +14,7 @@ export const questionAsced = (index) => {
     'Answer "yes" if the number is even, otherwise answer "no".',
     'What is the result of the expression?',
     'Find the greatest common divisor of given numbers.',
+    'What number is missing in the progression?',
   ];
   return question[index];
 };
@@ -22,6 +23,7 @@ export const variantExpression = (index) => {
   const expression = [
     numberRandom(1, 100),
     ['+', '-', '*'][numberRandom(0, ['+', '-', '*'].length - 1)],
+    numberRandom(1, 10),
   ];
   return expression[index];
 };
