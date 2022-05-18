@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 import questionAboutTheNameUser from '../src/games/cli.js';
 
-questionAboutTheNameUser();
+console.log(questionAboutTheNameUser());
