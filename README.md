@@ -4,16 +4,16 @@
 [![Eslint Status](https://github.com/IlnurFazylzyanov/frontend-project-lvl1/actions/workflows/eslint.yml/badge.svg)](https://github.com/IlnurFazylzyanov/frontend-project-lvl1/actions/workflows/eslint.yml)
 
 ### Asciinema brain-even:
-[![asciicast](https://asciinema.org/a/SGrKndcj02ighjCwkxfddYRRu.svg)](https://asciinema.org/a/SGrKndcj02ighjCwkxfddYRRu)
+[![asciicast](https://asciinema.org/a/ngYxYCLgwlTzf7FJZ86W7ORi7.svg)](https://asciinema.org/a/ngYxYCLgwlTzf7FJZ86W7ORi7)
 
 ### Asciinema brain-calc:
-[![asciicast](https://asciinema.org/a/35YA8THO4cE9Ehk2LvplMiuOy.svg)](https://asciinema.org/a/35YA8THO4cE9Ehk2LvplMiuOy)
+[![asciicast](https://asciinema.org/a/s9Smjh7w8u6wkcwa2nFhfPcYs.svg)](https://asciinema.org/a/s9Smjh7w8u6wkcwa2nFhfPcYs)
 
 ### Asciinema brain-gcd:
-[![asciicast](https://asciinema.org/a/u3CgKuTYrQejyKguAinxa5mUk.svg)](https://asciinema.org/a/u3CgKuTYrQejyKguAinxa5mUk)
+[![asciicast](https://asciinema.org/a/3rmmEHZSsg0NSeBFezQLGJrz7.svg)](https://asciinema.org/a/3rmmEHZSsg0NSeBFezQLGJrz7)
 
 ### Asciinema brain-progression:
-[![asciicast](https://asciinema.org/a/UQUxR3izeDhIoKHCxrgsZ0XZu.svg)](https://asciinema.org/a/UQUxR3izeDhIoKHCxrgsZ0XZu)
+[![asciicast](https://asciinema.org/a/TzmZPQBZcDVnnxo0ZNVZO9t7J.svg)](https://asciinema.org/a/TzmZPQBZcDVnnxo0ZNVZO9t7J)
 
 ### Asciinema brain-prime:
-[![asciicast](https://asciinema.org/a/3L8MxdzKCFvFO8DI3KS5BUq1Y.svg)](https://asciinema.org/a/3L8MxdzKCFvFO8DI3KS5BUq1Y)
+[![asciicast](https://asciinema.org/a/pyhcmzMNGtU6Z6MkOVepR86at.svg)](https://asciinema.org/a/pyhcmzMNGtU6Z6MkOVepR86at)
