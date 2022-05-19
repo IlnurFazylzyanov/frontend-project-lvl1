@@ -1,24 +1,16 @@
-import {
-  answerUser,
-  questionAboutTheNameUser,
-  questionAsced,
-  variantExpression,
-} from '../index.js';
+import { gameLogicFunction, numberRandom } from '../index.js';
 
-const nameUser = questionAboutTheNameUser();
-console.log(questionAsced(0));
+const essenceGameEven = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const answerYesOrNo = (count = 2) => {
-  const numberRand = variantExpression(0);
-  console.log(`Question: ${numberRand}`);
-  const answer = answerUser();
-  if ((numberRand % 2 === 0 && answer !== 'yes') || (numberRand % 2 !== 0 && answer !== 'no')) {
-    const modifiedAnswer = answer === 'yes' ? 'no' : 'yes';
-    console.log(`"${answer}" is wrong answer ;(. Correct answer was "${modifiedAnswer}".`);
-    return `Let's try again, ${nameUser}!`;
-  }
-  console.log('Correct!');
-  return count === 0 ? `Congratulations, ${nameUser}! ` : answerYesOrNo(count - 1);
+const parityCheck = (number) => number % 2 === 0;
+
+const getBasicData = () => {
+  const numberRand = numberRandom(0, 100);
+  const question = String(numberRand);
+  const answerCorrect = parityCheck(numberRand) ? 'yes' : 'no';
+  return [question, answerCorrect];
 };
 
-export default answerYesOrNo;
+const startTheGameEven = () => gameLogicFunction(essenceGameEven, getBasicData, 2);
+
+export default startTheGameEven;
