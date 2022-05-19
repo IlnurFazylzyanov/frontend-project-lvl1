@@ -16,9 +16,10 @@ export const gameLogicFunction = (essenceGameEven, getBasicData) => {
     const answerUser = readlineSync.question('Your answer: ');
     if (answerUser !== answerCorrect) {
       console.log(`"${answerUser}" is wrong answer ;(. Correct answer was "${answerCorrect}".`);
-      return (`Let's try again, ${nameUser}!`);
+      console.log(`Let's try again, ${nameUser}!`);
+      return;
     }
     console.log('Correct!');
   }
-  return console.log(`Congratulations, ${nameUser}!`);
+  console.log(`Congratulations, ${nameUser}!`);
 };

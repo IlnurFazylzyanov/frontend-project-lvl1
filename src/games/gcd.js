@@ -1,36 +1,26 @@
-// import {
-//   answerUser,
-//   questionAboutTheNameUser,
-//   questionAsced,
-//   variantExpression,
-// } from '../index.js';
+import { gameLogicFunction, numberRandom } from '../index.js';
 
-// const nameUser = questionAboutTheNameUser();
-// console.log(questionAsced(2));
+const essenceGameGcd = 'Find the greatest common divisor of given numbers.';
 
-// const findTheGreatestCommonDivisor = (count = 2) => {
-//   const collDivisor = [];
-//   let result;
-//   const firstNumberExpression = variantExpression(0);
-//   const secondNumberExpression = variantExpression(0);
-//   console.log(`Question: ${firstNumberExpression} ${secondNumberExpression}`);
-//   const answer = answerUser();
-//   for (let i = 1; i <= firstNumberExpression; i += 1) {
-//     if (firstNumberExpression % i === 0) {
-//       collDivisor.push(i);
-//     }
-//   }
-//   collDivisor.forEach((item) => {
-//     if (secondNumberExpression % item === 0) {
-//       result = item;
-//     }
-//   });
-//   if (result !== Number(answer)) {
-//     console.log(`"${answer}" is wrong answer ;(. Correct answer was "${result}".`);
-//     return `Let's try again, ${nameUser}!`;
-//   }
-//   console.log('Correct!');
-//   return count === 0 ? `Congratulations, ${nameUser}! `;
-// };
+const getBasicData = () => {
+  const collDivisor = [];
+  let result;
+  const firstNumberExpression = numberRandom(0, 100);
+  const secondNumberExpression = numberRandom(0, 100);
+  const question = ` ${firstNumberExpression} ${secondNumberExpression}`;
+  for (let i = 1; i <= firstNumberExpression; i += 1) {
+    if (firstNumberExpression % i === 0) {
+      collDivisor.push(i);
+    }
+  }
+  collDivisor.forEach((item) => {
+    if (secondNumberExpression % item === 0) {
+      result = item;
+    }
+  });
+  return [question, String(result)];
+};
 
-// export default findTheGreatestCommonDivisor;
+const startTheGameGcd = () => gameLogicFunction(essenceGameGcd, getBasicData);
+
+export default startTheGameGcd;

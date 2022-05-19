@@ -1,6 +1,6 @@
 import { gameLogicFunction, numberRandom } from '../index.js';
 
-const essenceGameEven = 'What is the result of the expression?';
+const essenceGameCalc = 'What is the result of the expression?';
 
 const getBasicData = () => {
   let resultOperation;
@@ -20,6 +20,6 @@ const getBasicData = () => {
   return [question, String(resultOperation)];
 };
 
-const startTheGameCalc = () => gameLogicFunction(essenceGameEven, getBasicData);
+const startTheGameCalc = () => gameLogicFunction(essenceGameCalc, getBasicData);
 
 export default startTheGameCalc;
