@@ -1,35 +1,25 @@
-// import {
-//   questionAboutTheNameUser,
-//   questionAsced,
-//   variantExpression,
-//   answerUser,
-// } from '../index.js';
+import { gameLogicFunction, numberRandom } from '../index.js';
 
-// const nameUser = questionAboutTheNameUser();
-// console.log(questionAsced(1));
+const essenceGameEven = 'What is the result of the expression?';
 
-// const calculateMathTheOperation = (count = 2) => {
-//   let resultOperation;
-//   const firstNumberExpression = variantExpression(0);
-//   const secondNumberExpression = variantExpression(0);
-//   const operationRandom = variantExpression(1);
-//   console.log(`Question: ${firstNumberExpression} ${operationRandom} ${secondNumberExpression}`);
-//   if (operationRandom === '+') {
-//     resultOperation = firstNumberExpression + secondNumberExpression;
-//   }
-//   if (operationRandom === '-') {
-//     resultOperation = firstNumberExpression - secondNumberExpression;
-//   }
-//   if (operationRandom === '*') {
-//     resultOperation = firstNumberExpression * secondNumberExpression;
-//   }
-//   const answer = answerUser();
-//   if (Number(answer) !== resultOperation) {
-//     console.log(`"${answer}" is wrong answer ;(. Correct answer was "${resultOperation}".`);
-//     return `Let's try again, ${nameUser}!`;
-//   }
-//   console.log('Correct!');
-//   return count === 0 ? `Congratulations, ${nameUser}! ` : calculateMathTheOperation(count - 1);
-// };
+const getBasicData = () => {
+  let resultOperation;
+  const firstNumberExpression = numberRandom(0, 100);
+  const secondNumberExpression = numberRandom(0, 100);
+  const operationRandom = ['+', '-', '*'][numberRandom(0, ['+', '-', '*'].length - 1)];
+  const question = `${firstNumberExpression} ${operationRandom} ${secondNumberExpression}`;
+  if (operationRandom === '+') {
+    resultOperation = firstNumberExpression + secondNumberExpression;
+  }
+  if (operationRandom === '-') {
+    resultOperation = firstNumberExpression - secondNumberExpression;
+  }
+  if (operationRandom === '*') {
+    resultOperation = firstNumberExpression * secondNumberExpression;
+  }
+  return [question, String(resultOperation)];
+};
 
-// export default calculateMathTheOperation;
+const startTheGameCalc = () => gameLogicFunction(essenceGameEven, getBasicData);
+
+export default startTheGameCalc;

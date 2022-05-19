@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import calculateMathTheOperation from '../src/games/calc.js';
+import startTheGameCalc from '../src/games/calc.js';
 
-console.log(calculateMathTheOperation());
+startTheGameCalc();

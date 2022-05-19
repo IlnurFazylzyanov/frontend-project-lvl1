@@ -11,6 +11,6 @@ const getBasicData = () => {
   return [question, answerCorrect];
 };
 
-const startTheGameEven = () => gameLogicFunction(essenceGameEven, getBasicData, 2);
+const startTheGameEven = () => gameLogicFunction(essenceGameEven, getBasicData);
 
 export default startTheGameEven;
