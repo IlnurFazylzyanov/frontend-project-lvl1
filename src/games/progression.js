@@ -1,36 +1,25 @@
-// import {
-//   answerUser,
-//   questionAboutTheNameUser,
-//   questionAsced,
-//   variantExpression,
-//   numberRandom,
-// } from '../index.js';
+import { gameLogicFunction, numberRandom } from '../index.js';
 
-// const nameUser = questionAboutTheNameUser();
-// console.log(questionAsced(3));
+const essenceGameProgession = 'What number is missing in the progression?';
 
-// const findTheMissingProgressionNumber = (count = 2) => {
-//   const collProgessNumber = [];
-//   let numberRand = variantExpression(0);
-//   const numberProgress = variantExpression(2);
-//   for (let i = 0; i < 10; i += 1) {
-//     collProgessNumber.push(numberRand);
-//     numberRand += numberProgress;
-//   }
-//   const randomIndex = numberRandom(1, collProgessNumber.length - 1);
-//   collProgessNumber.map((item, i) => {
-//     const collWithMissingNumber = randomIndex === i ? collProgessNumber[i] = '..' : item;
-//     return collWithMissingNumber;
-//   });
-//   console.log(`Question: ${collProgessNumber.join(' ')}`);
-//   const answer = answerUser();
-//   const result = collProgessNumber[randomIndex - 1] + numberProgress;
-//   if (result !== Number(answer)) {
-//     console.log(`"${answer}" is wrong answer ;(. Correct answer was "${result}".`);
-//     return `Let's try again, ${nameUser}!`;
-//   }
-//   console.log('Correct!');
-//   return count === 0 ? `Congratulations, ${nameUser}! `
-// };
+const getBasicData = () => {
+  const collProgessNumber = [];
+  let numberRand = numberRandom(0, 100);
+  const numberProgress = numberRandom(0, 20);
+  for (let i = 0; i < 10; i += 1) {
+    collProgessNumber.push(numberRand);
+    numberRand += numberProgress;
+  }
+  const randomIndex = numberRandom(1, collProgessNumber.length - 1);
+  collProgessNumber.map((item, i) => {
+    const collWithMissingNumber = randomIndex === i ? collProgessNumber[i] = '..' : item;
+    return collWithMissingNumber;
+  });
+  const question = `${collProgessNumber.join(' ')}`;
+  const answerCorrect = collProgessNumber[randomIndex - 1] + numberProgress;
+  return [question, String(answerCorrect)];
+};
 
-// export default findTheMissingProgressionNumber;
+const startTheGameProgression = () => gameLogicFunction(essenceGameProgession, getBasicData);
+
+export default startTheGameProgression;

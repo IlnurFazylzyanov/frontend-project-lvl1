@@ -1,31 +1,22 @@
-// import {
-//   answerUser,
-//   questionAboutTheNameUser,
-//   questionAsced,
-//   variantExpression,
-// } from '../index.js';
+import { gameLogicFunction, numberRandom } from '../index.js';
 
-// const nameUser = questionAboutTheNameUser();
-// console.log(questionAsced(4));
+const essenceGamePrime = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-// const ifGivenNumberIsPrime = (count = 2) => {
-//   const collDivisor = [];
-//   const numberRand = variantExpression(0);
-//   for (let i = 2; i < numberRand; i += 1) {
-//     if (numberRand % i === 0) {
-//       collDivisor.push(i);
-//     }
-//   }
-//   console.log(`Question: ${numberRand}`);
-//   const answer = answerUser();
-//   if((collDivisor.length !== 0 && answer !== 'no')||(collDivisor.length === 0&&;
-//   answer !== 'yes')){
-//     const modifiedAnswer = answer === 'yes' ? 'no' : 'yes';
-//     console.log(`"${answer}" is wrong answer ;(. Correct answer was "${modifiedAnswer}".`);
-//     return `Let's try again, ${nameUser}!`;
-//   }
-//   console.log('Correct!');
-//   return count === 0 ? `Congratulations, ${nameUser}! ` : ifGivenNumberIsPrime(count - 1);
-// };
+const parityCheck = (number) => number % 2 === 0;
 
-// export default ifGivenNumberIsPrime;
+const getBasicData = () => {
+  const collDivisor = [];
+  const numberRand = numberRandom(0, 100);
+  for (let i = 2; i < numberRand; i += 1) {
+    if (parityCheck(numberRand)) {
+      collDivisor.push(i);
+    }
+  }
+  const question = String(numberRand);
+  const answerCorrect = collDivisor.length === 0 ? 'yes' : 'no';
+  return [question, answerCorrect];
+};
+
+const startTheGamePrime = () => gameLogicFunction(essenceGamePrime, getBasicData);
+
+export default startTheGamePrime;
