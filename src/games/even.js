@@ -1,4 +1,5 @@
-import { gameLogicFunction, numberRandom } from '../index.js';
+import gameLogic from '../index.js';
+import numberRandom from '../utils.js';
 
 const essenceGameEven = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -8,9 +9,10 @@ const getBasicData = () => {
   const numberRand = numberRandom(0, 100);
   const question = String(numberRand);
   const answerCorrect = parityCheck(numberRand) ? 'yes' : 'no';
+
   return [question, answerCorrect];
 };
 
-const startTheGameEven = () => gameLogicFunction(essenceGameEven, getBasicData);
+const startTheGameEven = () => gameLogic(essenceGameEven, getBasicData);
 
 export default startTheGameEven;

@@ -1,4 +1,5 @@
-import { gameLogicFunction, numberRandom } from '../index.js';
+import gameLogicFunction from '../index.js';
+import numberRandom from '../utils.js';
 
 const essenceGamePrime = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -12,6 +13,7 @@ const getBasicData = () => {
   }
   const question = String(numberRand);
   const answerCorrect = collDivisor.length === 0 ? 'yes' : 'no';
+
   return [question, answerCorrect];
 };
 

@@ -1,4 +1,5 @@
-import { gameLogicFunction, numberRandom } from '../index.js';
+import gameLogicFunction from '../index.js';
+import numberRandom from '../utils.js';
 
 const essenceGameGcd = 'Find the greatest common divisor of given numbers.';
 
@@ -18,6 +19,7 @@ const getBasicData = () => {
       answerCorrect = item;
     }
   });
+
   return [question, String(answerCorrect)];
 };
 

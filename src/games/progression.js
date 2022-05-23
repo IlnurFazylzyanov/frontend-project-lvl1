@@ -1,22 +1,24 @@
-import { gameLogicFunction, numberRandom } from '../index.js';
+import gameLogicFunction from '../index.js';
+import numberRandom from '../utils.js';
 
 const essenceGameProgession = 'What number is missing in the progression?';
 
 const getBasicData = () => {
-  const collProgessNumber = [];
+  const collProgressNumber = [];
   let numberRand = numberRandom(0, 100);
   const numberProgress = numberRandom(0, 20);
+  const randomIndex = numberRandom(1, 10);
+
   for (let i = 0; i < 10; i += 1) {
-    collProgessNumber.push(numberRand);
+    collProgressNumber.push(numberRand);
     numberRand += numberProgress;
+    if (randomIndex === i) {
+      collProgressNumber[randomIndex] = '..';
+    }
   }
-  const randomIndex = numberRandom(1, collProgessNumber.length - 1);
-  collProgessNumber.map((item, i) => {
-    const collWithMissingNumber = randomIndex === i ? collProgessNumber[i] = '..' : item;
-    return collWithMissingNumber;
-  });
-  const question = `${collProgessNumber.join(' ')}`;
-  const answerCorrect = collProgessNumber[randomIndex - 1] + numberProgress;
+  const question = `${collProgressNumber.join(' ')}`;
+  const answerCorrect = collProgressNumber[randomIndex - 1] + numberProgress;
+
   return [question, String(answerCorrect)];
 };
 
