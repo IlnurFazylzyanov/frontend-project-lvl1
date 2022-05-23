@@ -5,7 +5,7 @@ const essenceGameCalc = 'What is the result of the expression?';
 
 const operators = ['+', '-', '*'];
 
-const resultOperation = (num1, num2, operator) => {
+const resultOperation = (num1, operator, num2) => {
   let result;
   if (operator === '+') {
     result = num1 + num2;
@@ -24,7 +24,7 @@ const getBasicData = () => {
   const secondNumber = numberRandom(0, 100);
   const operator = operators[numberRandom(0, operators.length - 1)];
   const question = `${firstNumber} ${operator} ${secondNumber}`;
-  const answerCorrect = String(resultOperation(firstNumber, secondNumber, operator));
+  const answerCorrect = String(resultOperation(firstNumber, operator, secondNumber));
 
   return [question, answerCorrect];
 };
