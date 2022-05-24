@@ -6,8 +6,8 @@ const essenceGameProgession = 'What number is missing in the progression?';
 const getBasicData = () => {
   const collProgressNumber = [];
   let numberRand = numberRandom(0, 100);
-  const numberProgress = numberRandom(0, 20);
-  const randomIndex = numberRandom(1, 10);
+  const numberProgress = numberRandom(1, 20);
+  const randomIndex = numberRandom(1, 9);
 
   for (let i = 0; i < 10; i += 1) {
     collProgressNumber.push(numberRand);
